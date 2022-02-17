@@ -1,0 +1,13 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.13.0",
+    "libraryName": "mgt-templating",
+    "libraryId": "fc4d9ede-f6b2-4a33-91b9-49e09f80bd6c",
+    "environment": "spo",
+    "packageManager": "npm",
+    "isCreatingSolution": false,
+    "plusBeta": false,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
