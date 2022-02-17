@@ -3,7 +3,7 @@ import styles from './MyAgenda.module.scss';
 import * as strings from 'MyAgendaWebPartStrings';
 import { IMyAgendaProps } from './IMyAgendaProps';
 import { Event as IEvent } from '@microsoft/microsoft-graph-types';
-import { Agenda, MgtTemplateProps } from '@microsoft/mgt-react';
+import { Agenda, Person, MgtTemplateProps } from '@microsoft/mgt-react/dist/es6/spfx';
 import { WebPartTitle } from '@pnp/spfx-controls-react/lib/WebPartTitle';
 import { FontIcon, Link, Spinner, SpinnerSize, Text } from 'office-ui-fabric-react';
 
@@ -19,10 +19,10 @@ export default class MyAgenda extends React.Component<IMyAgendaProps, {}> {
           }}
         />
         <div className={styles.contentRow}>
-          <Agenda group-by-day days={1} showMax={6} date={new Date().toISOString()} >
+          <Agenda days={1} showMax={6} date={new Date().toISOString()} >
             <Event template='event' data-type={"event"} />
             <NoData template='no-data' data-type={"no-data"} />
-            <Loading template='loading' data-type={"loading"}/>
+            <Loading template='loading' data-type={"loading"} />
           </Agenda>
         </div>
       </div>
@@ -51,7 +51,13 @@ export const Event = (props: MgtTemplateProps) => {
                 {event.location.displayName}
               </span>
             }
+            <div className={styles.personas}>
+              {
+                event.attendees.map((attendee) => <Person className={styles.small} personQuery={attendee.emailAddress.address} />)
+              }
+            </div>
           </Text>
+
         </div>
         <div className={styles.subject}>{event.subject}</div>
       </Link>

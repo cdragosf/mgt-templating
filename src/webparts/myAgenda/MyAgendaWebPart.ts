@@ -12,7 +12,7 @@ import { IMyAgendaProps } from './components/IMyAgendaProps';
 import {
   Providers,
   SharePointProvider
-} from "@microsoft/mgt";
+} from "@microsoft/mgt-spfx";
 
 export interface IMyAgendaWebPartProps {
   description: string;
@@ -21,8 +21,10 @@ export interface IMyAgendaWebPartProps {
 export default class MyAgendaWebPart extends BaseClientSideWebPart<IMyAgendaWebPartProps> {
 
   protected async onInit(): Promise<void> {
-    Providers.globalProvider = new SharePointProvider(this.context);
-    
+    if (!Providers.globalProvider) {
+      Providers.globalProvider = new SharePointProvider(this.context);
+    }
+
     return Promise.resolve();
   }
 
@@ -61,7 +63,7 @@ export default class MyAgendaWebPart extends BaseClientSideWebPart<IMyAgendaWebP
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                
+
               ]
             }
           ]

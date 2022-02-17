@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@microsoft/mgt-react": "^2.3.2",
+    "@microsoft/mgt-spfx": "^2.3.2",
     "@microsoft/sp-core-library": "1.13.0",
     "@microsoft/sp-lodash-subset": "1.13.0",
     "@microsoft/sp-office-ui-fabric-core": "1.13.0",
@@ -21,7 +22,6 @@
     "react-dom": "16.13.1"
   },
   "devDependencies": {
-    "@microsoft/mgt": "^2.3.2",
     "@microsoft/microsoft-graph-types": "^2.14.0",
     "@microsoft/rush-stack-compiler-3.9": "0.4.47",
     "@microsoft/sp-build-web": "1.13.0",

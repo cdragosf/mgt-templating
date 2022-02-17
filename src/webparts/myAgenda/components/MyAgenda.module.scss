@@ -138,4 +138,12 @@
     @include ms-font-m;
     color: "[theme:alert, default: #333333]";
   }
+
+  .personas {
+    float: right;
+
+    .small {
+      margin: 0px 0 0 5px;
+    }
+  }
 }
