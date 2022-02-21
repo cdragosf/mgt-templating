@@ -9,14 +9,13 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import * as strings from 'MyAgendaWebPartStrings';
 import MyAgenda from './components/MyAgenda';
 import { IMyAgendaProps } from './components/IMyAgendaProps';
-import {
-  Providers,
-  SharePointProvider
-} from "@microsoft/mgt-spfx";
+
 
 export interface IMyAgendaWebPartProps {
   description: string;
 }
+
+import { Providers, SharePointProvider } from "@microsoft/mgt-spfx";
 
 export default class MyAgendaWebPart extends BaseClientSideWebPart<IMyAgendaWebPartProps> {
 

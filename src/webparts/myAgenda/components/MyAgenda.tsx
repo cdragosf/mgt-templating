@@ -2,11 +2,11 @@ import * as React from 'react';
 import styles from './MyAgenda.module.scss';
 import * as strings from 'MyAgendaWebPartStrings';
 import { IMyAgendaProps } from './IMyAgendaProps';
-import { Event as IEvent } from '@microsoft/microsoft-graph-types';
-import { Agenda, Person, MgtTemplateProps } from '@microsoft/mgt-react/dist/es6/spfx';
 import { WebPartTitle } from '@pnp/spfx-controls-react/lib/WebPartTitle';
 import { FontIcon, Link, Spinner, SpinnerSize, Text } from 'office-ui-fabric-react';
 
+import { Agenda, Person, MgtTemplateProps } from '@microsoft/mgt-react/dist/es6/spfx';
+import { Event as IEvent } from '@microsoft/microsoft-graph-types';
 export default class MyAgenda extends React.Component<IMyAgendaProps, {}> {
   public render(): React.ReactElement<IMyAgendaProps> {
     return (
@@ -57,7 +57,6 @@ export const Event = (props: MgtTemplateProps) => {
               }
             </div>
           </Text>
-
         </div>
         <div className={styles.subject}>{event.subject}</div>
       </Link>
